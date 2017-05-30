@@ -10,14 +10,13 @@ class messages(models.Model):
     _name = 'eai_server.messages'
     _descrition = 'EAI Server Messages'
     
-    date = fields.Date('Date', required=True)
-    time = fields.Time('Time', required=True)
+    create_date = fields.datetime('Creation Date', required=True)
     direction = fields.selection([
        ('outgoing', 'Outgoing Message'),
        ('incoming', 'Incoming Message'),
        ]'Direction', required=True) 
-    sender = fields.Char('Sender', required=True)
-    receiver = fields.Char('Receiver', required=True)
+    sender_id = fields.many2one('res.partner', string='Sender', required=True)
+    receiver_id = fields.many2one('res.partner', string='Receiver', required=True)
     state = fields.selection([
        ('created', 'Message Created'),
        ('mapping_ok', 'Message Mapping OK'),
