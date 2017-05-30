@@ -53,7 +53,8 @@
         </record>
       
         <!-- Menü EAI Server -->
-        <menuitem id="eai_server_menu" name="EAI Server" parent="knowledge.menu_document" />
+        <menuitem name="EAI" id="eai_menu" groups="base.group_system,base.group_document_user" sequence="116"/>
+        <menuitem id="eai_server_menu" name="EAI Server" parent="eai_menu" />
         <menuitem id="eai_server_messages_menu" name="Messages" parent="eai_server_menu" action="messages_action" />
         
     </data>
