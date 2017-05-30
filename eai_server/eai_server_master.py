@@ -30,4 +30,3 @@ class messages(models.Model):
        ('progress', 'Message in Progress'),
        ], 'Status') 
     
-    @api.one
