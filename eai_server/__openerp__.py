@@ -18,7 +18,7 @@ Enterprise Application Integration Server with following features:
     'category': 'Generic Modules/Others',
     'summary': 'Enterprise Application Integration Server for Odoo',
     'depends': [],
-    'data': [],
+    'data': ['views/eai_server_views.xml'],
     'demo': [],
     'qweb': [],
     'js': [],
