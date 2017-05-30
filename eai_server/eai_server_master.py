@@ -15,9 +15,9 @@ class messages(models.Model):
        ('outgoing', 'Outgoing Message'),
        ('incoming', 'Incoming Message'),
        ]'Direction', required=True) 
+    name = fields.Char('Name')
     sender_id = fields.many2one('res.partner', string='Sender', required=True)
     receiver_id = fields.many2one('res.partner', string='Receiver', required=True)
-    name = fields.Char('Name')
     state = fields.selection([
        ('created', 'Message Created'),
        ('mapping_ok', 'Message Mapping OK'),
