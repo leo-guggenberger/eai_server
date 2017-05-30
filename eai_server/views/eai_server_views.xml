@@ -1,7 +1,18 @@
 <?xml version="1.0"?>
 <openerp>
    <data>
-   
+
+        <!-- Messages View -->
+        <record id="messages_action" model="ir.actions.act_window">
+            <field name="name">Messages</field>
+            <field name="res_model">eai_server.messages</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">No messages available at the moment.</p>
+            </field>
+         </record>
+      
         <!-- Menü EAI Server -->
         <menuitem id="eai_server_menu" name="EAI Server" parent="knowledge.menu_document" />
         <menuitem id="eai_server_messages_menu" name="Messages" parent="eai_server_menu" action="messages_action" />
