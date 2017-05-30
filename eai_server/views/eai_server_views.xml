@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<openerp>
+   <data>
+   
+        <!-- Menü EAI Server -->
+        <menuitem id="eai_server_menu" name="EAI Server" parent="knowledge.menu_document" />
+        <menuitem id="eai_server_messages_menu" name="Messages" parent="eai_server_menu" action="messages_action" />
+        
+    </data>
+</openerp>
