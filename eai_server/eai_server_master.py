@@ -26,6 +26,7 @@ class messages(models.Model):
        ('sent_ok', 'Message Sent OK'),
        ('sent_nok', 'Message Sent Failed'),
        ('cancel', 'Message Manually Cancelled'),
+       ('delected', 'Message Manually Deleted'),
        ('waiting', 'Message Waiting Schedule'),
        ('progress', 'Message in Progress'),
        ], 'Status') 
