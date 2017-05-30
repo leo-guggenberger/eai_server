@@ -11,7 +11,20 @@
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">No messages available at the moment.</p>
             </field>
-         </record>
+        </record>
+        <record id="messages_tree_view" model="ir.ui.view">
+            <field name="name">messages.tree.view</field>
+            <field name="view_type">tree</field>
+            <field name="model">eai_server.messages</field>
+            <field name="arch" type="xml">
+                <tree string="Messages" default_order="date desc">
+                    <field name="name" />
+                    <field name="date" />
+                    <field name="photographer" />
+                    <field name="picture_number" />
+                </tree>
+            </field>
+</record>
       
         <!-- Menü EAI Server -->
         <menuitem id="eai_server_menu" name="EAI Server" parent="knowledge.menu_document" />
