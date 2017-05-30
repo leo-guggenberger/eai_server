@@ -11,11 +11,11 @@ class messages(models.Model):
     _descrition = 'EAI Server Messages'
     
     create_date = fields.datetime('Creation Date', required=True)
+    name = fields.Char('Name')
     direction = fields.selection([
        ('outgoing', 'Outgoing Message'),
        ('incoming', 'Incoming Message'),
        ]'Direction', required=True) 
-    name = fields.Char('Name')
     sender_id = fields.many2one('res.partner', string='Sender', required=True)
     receiver_id = fields.many2one('res.partner', string='Receiver', required=True)
     state = fields.selection([
@@ -30,4 +30,15 @@ class messages(models.Model):
        ('waiting', 'Message Waiting Schedule'),
        ('progress', 'Message in Progress'),
        ], 'Status') 
+    document_ids = fields.One2many('eai_server.documents', 'message_id', 'DocumentID')
     
+# Table documents
+class documents(models.Model):
+    _name = 'eai_server.documents'
+    _descrition = 'EAI Server Documents'
+    
+    message_id = fields.Many2one('eai_server.messages',ondelete='cascade', string='MessageID')
+    create_date = fields.datetime('Creation Date', required=True)
+    name = fields.Char('Name')
+    document_text = fields.Text('Document Text')
+    document_binary = fields.Binary('Document Binary')
