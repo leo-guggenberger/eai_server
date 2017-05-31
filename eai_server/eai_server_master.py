@@ -32,6 +32,12 @@ class messages(models.Model):
        ], 'Status') 
     document_ids = fields.One2many('eai_server.documents', 'message_id', 'DocumentID')
     
+    @api.multi
+    def write(self, vals):
+        res = super(messages, self).write(vals)
+        res.create_date = fields.datetime.now()
+        return res
+    
 # Table documents
 class documents(models.Model):
     _name = 'eai_server.documents'
@@ -42,3 +48,9 @@ class documents(models.Model):
     name = fields.Char('Name')
     document_text = fields.Text('Document Text')
     document_binary = fields.Binary('Document Binary')
+
+    @api.multi
+    def write(self, vals):
+        res = super(documents, self).write(vals)
+        res.create_date = fields.datetime.now()
+        return res
