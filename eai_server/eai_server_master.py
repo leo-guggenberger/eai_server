@@ -1,4 +1,4 @@
-# picture_gallery_master.py
+# eai_server_master.py
 # -*- coding: utf-8 -*-
 
 from openerp import models, fields, api, tools
