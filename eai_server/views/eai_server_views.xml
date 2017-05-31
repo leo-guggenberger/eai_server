@@ -47,6 +47,18 @@
                             <field name="receiver_id" />
                             <field name="state" />
                         </group>
+                        <notebook>
+                            <page string="Documents">
+                                <field name="document_ids" widget="one2many_list">
+                                    <tree string="Documents" editable="bottom" default_order="create_date asc">
+                                        <field name="create_date" />
+                                        <field name="name" />
+                                        <field name="document_text" />
+                                        <field name="document_binary" />
+                                    </tree>
+                                </field>
+                            </page>
+</notebook>
                     </sheet>
                 </form>
             </field>
