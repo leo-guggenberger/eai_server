@@ -58,3 +58,15 @@ class documents(models.Model):
         res = super(documents, self).write(vals)
         res.create_date = fields.datetime.now()
         return res
+
+# Table clients
+class clients(models.Model):
+    _name = 'eai_server.clients'
+    _descrition = 'EAI Server Clients'
+    
+    client_id = fields.Many2one('res.partner',ondelete='cascade', string='Client ID')
+    client_name = fields.Char('Client Name')
+    url = fields.Char('Client Url')
+    db = fields.Char('Clientr Database')
+    username = fields.Char('Client User'), default='admin'
+    password = fields.Char('Client Password'), default='admin', password=true
