@@ -3,5 +3,28 @@
 <openerp>
 <data>
 
+          <record id="res_partner_eai_server_form_view" model="ir.ui.view">
+            <field name="name">res.partner.pos.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='sales_purchases']/group">
+                    <group string="EAI Server" name="eai_server_clients">
+                        <page string="Clients">
+                            <field name="client_ids" widget="one2many_list">
+                                <tree string="Clients" editable="bottom">
+                                    <field name="client_name" />
+                                    <field name="url" />
+                                    <field name="db" />
+                                    <field name="username" />
+                                    <field name="password" />
+                              </tree>
+                           </field>
+                        </page>
+                    </group>
+                </xpath>
+            </field>
+</record>
+  
 </data>
 </openerp>
