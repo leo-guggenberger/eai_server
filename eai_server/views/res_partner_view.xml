@@ -11,7 +11,7 @@
                 <xpath expr="//page[@name='sales_purchases']/group">
                     <group string="EAI Server" name="eai_server_clients">
                         <page string="Clients">
-                            <field name="client_ids" widget="one2many_list">
+                            <field name="eai_client_ids" widget="one2many_list">
                                 <tree string="Clients" editable="bottom">
                                     <field name="client_name" />
                                     <field name="url" />
