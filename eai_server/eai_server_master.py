@@ -46,6 +46,10 @@ class documents(models.Model):
     message_id = fields.Many2one('eai_server.messages',ondelete='cascade', string='MessageID')
     create_date = fields.datetime('Creation Date', required=True)
     name = fields.Char('Name')
+    type = fields.selection([
+       ('external_id', 'External IDs'),
+       ('data', 'Retrieved Data'),
+       ]'Document Type') 
     document_text = fields.Text('Document Text')
     document_binary = fields.Binary('Document Binary')
 
